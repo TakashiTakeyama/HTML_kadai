@@ -28,6 +28,10 @@ input[type= "submit"] {
   text-align: center;
 }
 
+input[type= "submit"]:hover{
+  opacity: 0.6;
+}
+
 textarea {
   width: 480px;
 }
