@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/company.css">
+  <link rel="stylesheet" href="./css/contact.css">
   <title>株式会社DIVE</title>
 </head>
 <body>
@@ -22,40 +23,40 @@
         </ul>
       </nav>
     </header>
-    <img src="./images/company.png" class="image_area">
+    <img src="./images/contact.png" class="image_area">
     <div class="wrapper clearfix">
       <aside class="side_menu">
         <nav>
           <ul>
             <li><a href="business.html">事業内容</a></li>
-            <li class="point"><a href="company.html">会社概要</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="company.html">会社概要</a></li>
+            <li class="point"><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </nav>
       </aside>
       <article class="content">
-        <table class="company">
+        <form action="cgi-bin/formmail.cgi" method="post">
+          <table class="contact">
           <tr>
-            <th>商号</th>
-            <td>株式会社DIVE</td>
+            <th>お名前</th>
+            <td><input type="text" name="name" size="40"></td>
           </tr>
           <tr>
-            <th>所在地</th>
-            <td>〒111-1111　東京都渋谷区</td>
+            <th>メールアドレス</th>
+            <td><input type="text" name="name" size="40"></td>
           </tr>
           <tr>
-            <th>設立年月日</th>
-            <td>2015年1月1日</td>
+            <th>性別</th>
+            <td><input type="radio" name="sex" value="male">男
+            <input type="radio" name="sex" value="female">女</td>
           </tr>
           <tr>
-            <th>資本金</th>
-            <td>200万円</td>
-          </tr>
-          <tr>
-            <th>従業員</th>
-            <td>10名</td>
+            <th>お問い合わせ</th>
+            <td><textarea name="kanso" rows="4" cols="40"></textarea></td>
           </tr>
         </table>
+          <div class= "submit"><input type="submit" value="送信"></div>
+        </form>
       </article>
     </div>
     <footer class="footer">
