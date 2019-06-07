@@ -11,12 +11,17 @@ $(document).ready(function(){
                           // return subject_points
 
     // さらにこのような記述をすることで、「合計点：」となっている右の部分に合計点が出力される
-    let sum = subject_points[0];
-    sum = sum + subject_points[1];
-    sum = sum + subject_points[2];
-    sum = sum + subject_points[3];
-    sum = sum + subject_points[4];
+    let sum = subject_points.reduce(function(a, b) {
+      return a+b;
+    });
+    // let sum = subject_points[0];
+    // sum = sum + subject_points[1];
+    // sum = sum + subject_points[2];
+    // sum = sum + subject_points[3];
+    // sum = sum + subject_points[4];
     $("#sum_indicate").text(sum);
+
+
 
     // ここに、上記を参考にして平均点を出力する処理を書き込む
     let avg = sum/subject_points.length;
@@ -65,6 +70,7 @@ $(document).ready(function(){
     let judgement = get_pass_or_failure();
     // ここに、「最終ジャッジ」のボタンを押したら「あなたの成績はAです。合格です」といった内容を出力する処理を書き込む
     // 下記の記述をすることで、「最終ジャッジ」のボタンを押すと「あなたの成績は（ここに「ランク」の値を入れる）です。（ここに「判定」の値を入れる）です」という文字の入った水色のフキダシが出力される処理が実装される。
+    $('#declaration').empty();
     $('#declaration').append(`<label id="alert-indicate" class="alert alert-info">あなたの成績は${lank}です${judgement}です</label>`);
   };
 
