@@ -2,13 +2,21 @@ class Player
   def hand
     # コンソールを入力待ち状態にし、プレイヤーがコンソールから打ち込んだ値を出力する処理のメソッドの処理をこの中に作成する
     puts "数字を入力してください\n0:グー\n1:チョキ\n2:パー"
-    player_hand = gets.to_i
-    if player_hand == 0
+    # num = gets
+    # if num =~ /[0-2]/
+    #   nums = num
+    # else
+    #   puts "0から2の半角の値だよ。もう一度"
+    # end
+    player_hand = gets.scan(/-?[0-9]+/).to_s.to_i
+    puts player_hand
+    if player_hand == ["2"]
       puts "あなたはグー！"
       return player_hand
     elsif player_hand == 1
       puts "あなたはチョキ！"
       return player_hand
+
     elsif player_hand == 2
       puts "あなたはパー！"
       return player_hand
